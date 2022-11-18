@@ -1,18 +1,20 @@
-from crypt import methods
-
-from flask import Flask, Response, jsonify, request
+from flask import Flask
+from flask import jsonify
+from flask import request
 from flask_cors import CORS
+import json
+from waitress import serve
 
-from Controladores.PartidoControlador import PartidoControlador
-
-app = Flask(__name__)
+app=Flask(__name__)
 cors = CORS(app)
 
+from Controladores.ControladorPartido import ControladorPartido
+miControladorpartido=Controladorpartido()
 
 ##############################
 ##     VARIABLES GLOBALES   ##
 ##############################
-#miControladorPartido = PartidoControlador()
+miControladorPartido = PartidoControlador()
 #miControladorCandidato = CandidatoControlador()
 #miControladorMesa = MesaControlador()
 #miControladorResultado = ResultadoControlador()
